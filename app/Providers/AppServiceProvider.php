@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app
+        ->when(\App\Http\Controllers\ConfirmationController::class)
+        ->needs(\App\Services\EmailConfirmationMethod::class)
+        ->give(\App\Interfaces\ConfirmationMethodInterface::class);
     }
 
     /**
@@ -19,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+    
     }
 }

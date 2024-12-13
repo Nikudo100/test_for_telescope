@@ -1,11 +1,12 @@
-<?php
+эъ<?php
 
 namespace App\Interfaces;
 
 use App\Models\ConfirmationCode;
 
-interface ConfirmationMethodInterface
+interface ConfirmationMethodSendInterface
 {
     public function sendCode(ConfirmationCode $code);
+
     public function verifyCode(ConfirmationCode $code);
 }

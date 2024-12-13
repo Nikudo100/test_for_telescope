@@ -11,14 +11,8 @@ class ConfirmationMethod extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'method',
     ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function codes()
     {
